@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;500;600;700;800&display=swap');
+
+*
+{
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body
+{
+    font-family: 'Roboto';
+}
+
+
+.navigationBar
+{
+    height: 50px;
+    width: 100%;
+    background-color: black;
+}
+
+.navigationBar-container
+{
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    height: 100%;
+    color: white;
+    font-family: 'Sen';
+}
+
+.logo-container
+{
+    flex: 2;
+}
+
+.logo
+{
+    font-family: 'Sen';
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(0, 255, 0);
+}
+
+.menu-container
+{
+    flex: 6;
+}
+
+.menu-list
+{
+    display: flex;
+    list-style: none;
+}
+
+.menu-list-item
+{
+    margin: 30px;
+}
+
+.menu-list-item.active
+{
+    font-weight: bold;
+}
+
+.profile-container
+{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.profile-text-container
+{
+    margin: 0 20px;
+}
+
+.profile-picture
+{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.toggle
+{
+    width: 40px;
+    height: 20px ;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.toggle-icon
+{
+    color: rgb(0, 255, 0);
+}
+.toggle-icon-off
+{
+    color: red;
+}
+
+.toggle-ball
+{
+    width: 18px;
+    height: 18px;
+    background-color: black;
+    position: absolute;
+    right: 1px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all ease 1s;
+}
+
+.sideBar
+{
+    height: 100%;
+    width: 50px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.left-bar-icon 
+{
+    color: white;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.container
+{
+    background-color: rgb(35, 41, 35);
+    min-height: calc(100vh - 50px);
+    width: 100%;
+    color: white;
+}
+
+.content-container
+{
+    margin-left: 50px;
+}
+
+.featured-content
+{
+    min-height: 50vh;
+    padding:50px;
+}
+
+.featured-title
+{
+    width: 200px;
+}
+
+.featured-description
+{
+    width: 400px;
+    color: lightgrey;
+    margin: 30px 0;
+}
+
+.featured-button
+{
+    background-color: rgb(0, 255, 0);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.movie-list-container
+{
+    padding: 0 20px;
+}
+
+.movie-list-wrapper
+{
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-list-title
+{
+    font-weight: bold;
+}
+
+.movie-list
+{
+    display: flex;
+    align-items: center;
+    height: 300px;
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+}
+
+.movie-list-item
+{
+    margin-right: 40px;
+    position: relative;
+}
+
+.movie-list-item-image
+{
+    width: 200px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.movie-list-item:hover .movie-list-item-image
+{
+    transform: scale(1.2);
+    transition: all 1s ease-in-out;
+    margin-left: 10px;
+    opacity: 0.5;
+}
+
+.movie-list-item:hover .movie-list-item-title,
+.movie-list-item:hover .movie-list-item-description,
+.movie-list-item:hover .movie-list-item-button
+{
+    opacity: 1;
+}
+
+.movie-list-item-title
+{
+    background-color: rgba(0, 0, 0, 0.733);
+    padding: 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    left: 3px;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.movie-list-item-description
+{
+    background-color: rgba(0, 0, 0, 0.733);
+    padding: 10px;
+    font-size: 14px;
+    position: absolute;
+    top: 20%;
+    left: 3px;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+.movie-list-item-button
+{
+    background-color: rgb(0, 255, 0);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 80%;
+    left: 50px;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.arrow
+{
+    font-size: 140px;
+    position: absolute;
+    top: 25%;
+    right: 0;
+    color: lightgrey;
+    opacity: .5;
+}
+.arrow:hover
+{
+    color: rgb(0, 255, 0);
+    opacity: 1;
+    font-size: 150px;
+    transition: ease-in-out all .5s;
+    cursor: pointer;
+}
+
+.container.active
+{
+    background-color: white;
+}
+
+.movie-list-title.active
+{
+    color: black;
+}
+
+.navigationBar-container.active
+{
+    color: black;
+    background-color: white;
+}
+
+.sideBar.active
+{
+    background-color: white;
+}
+
+.left-bar-icon.active
+{
+    color:rgb(0, 0, 0);
+}
+
+.toggle.active
+{
+    background-color: black;
+}
+
+.toggle-ball.active
+{
+    background-color: white;
+    transform: translateX(-20px);
+}
+
+@media only screen and (max-width: 940px) {
+    .menu-container
+    {
+        display: none;
+    }
+}
